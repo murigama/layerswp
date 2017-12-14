@@ -1,3 +1,5 @@
+Este fork do Layerswp foi modificado de forma que o meu trabalho como desenvolvedor pudesse ser melhor aproveitado, seguindo toda a documentação de desenvolvimento presente no layerswp.
+
 ## Synopsis
 
 Layers is a WordPress Theme framework focused on extending the WordPress core functionality to include layout building through the WordPress Visual Customizer. A lightweight set of base options, widgets and theme templates provide a user-friendly, extensible tool for creating beautiful, WordPress-faithful websites
