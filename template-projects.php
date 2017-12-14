@@ -8,8 +8,7 @@
  */
 
 get_header();
-do_action( 'layers_before_blog_template' );
-get_template_part( 'partials/header' , 'page-title' ); ?>
+do_action( 'layers_before_blog_template' );  ?>
 
 <div class="container content-main archive clearfix">
 	<div class="grid">

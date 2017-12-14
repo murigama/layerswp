@@ -6,9 +6,8 @@
  * @since Layers 1.0.0
  */
 
-get_header();
+get_header(); ?>
 
-get_template_part( 'partials/header' , 'page-title' ); ?>
 <div class="container content-main archive clearfix">
 	<div class="grid">
 		<?php get_sidebar( 'left' ); ?>

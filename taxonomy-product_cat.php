@@ -9,8 +9,6 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'partials/header' , 'page-title' ); ?>
-
 <div class="<?php if( 'layout-fullwidth' != layers_get_theme_mod( 'content-layout-layout' ) ) echo 'container'; ?> clearfix content-main">
 	<div class="grid">
 		<?php /**

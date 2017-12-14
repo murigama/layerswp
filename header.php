@@ -29,3 +29,7 @@
 		<?php do_action( 'layers_after_header' ); ?>
 
 		<section id="wrapper-content" <?php layers_wrapper_class( 'wrapper_content', 'wrapper-content' ); ?>>
+
+		<?php if ( !is_front_page() ) {
+			get_template_part( 'partials/header' , 'page-title' );
+		} //add title on pages ?>

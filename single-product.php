@@ -8,8 +8,6 @@
  */
 get_header(); ?>
 
-<?php get_template_part( 'partials/header' , 'page-title' ); ?>
-
 <div id="post-<?php the_ID(); ?>" <?php post_class( 'content-main product' ); ?>>
 	<div class="grid">
 		<?php /**

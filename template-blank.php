@@ -10,8 +10,6 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'partials/header' , 'page-title' ); ?>
-
 <div id="post-<?php the_ID(); ?>" <?php post_class( 'container content-main clearfix' ); ?>>
     <?php if( have_posts() ) : ?>
         <?php while( have_posts() ) : the_post(); ?>
