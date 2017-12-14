@@ -79,9 +79,6 @@ require_once get_template_directory() . '/core/helpers/post-types.php';
 require_once get_template_directory() . '/core/helpers/sanitization.php';
 require_once get_template_directory() . '/core/helpers/template.php';
 require_once get_template_directory() . '/core/helpers/woocommerce.php';
-if( !defined( 'LAYERS_DISABLE_INTERCOM' ) ){
-	require_once get_template_directory() . '/core/helpers/intercom.php';
-}
 
 /*
  * Load Admin-specific files
@@ -186,10 +183,6 @@ if( ! function_exists( 'layers_setup' ) ) {
 		* Welcome Redirect
 		*/
 		if( isset($_GET["activated"]) && $pagenow = "themes.php" ) { //&& '' == get_option( 'layers_welcome' )
-
-			// Enable Intercom on activation
-			if( FALSE === get_option( 'layers_enable_intercom' ) )
-				update_option( 'layers_enable_intercom' , '1' );
 
 			update_option( 'layers_welcome' , 1);
 

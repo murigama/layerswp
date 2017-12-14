@@ -35,7 +35,7 @@
  * 16 - Add Last Class to Design-Bar Elements
  * 17 - Init RTE Editors
  * 18 - Custom Widget Initialization Events
- * 19 - Intercom checkbox
+ * 19 - Intercom checkbox (código removido)
  * 20 - Widget Peek/hide to preview changes
  * 21 - Customizer Control - Range Slider
  * 22 - Reset to Default
@@ -1561,20 +1561,8 @@ jQuery(function($) {
 
 
 	/**
-	 * 19 - Intercom checkbox
+	 * 19 - Intercom checkbox - Código Removido por Murilo Gama
 	 */
-
-	$(document).on( 'change', '#layers-enable-intercom', function(e){
-
-		if( 'undefined' !== typeof Intercom ){
-			if( !$(this).prop('checked') ){
-				Intercom('shutdown');
-			} else if( 'undefined' !== typeof window.intercomSettings ){
-				Intercom('boot', window.intercomSettings );
-			}
-		}
-
-	});
 
 	/**
 	 * Duplicate Widgets. (disabled)

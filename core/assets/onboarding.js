@@ -86,17 +86,7 @@ jQuery(function($) {
 				widget_data: $.parseJSON( $widget_data )
 			};
 
-			/** Log Event on Intercom **/
-			if( 'undefined' !== typeof Intercom  ){
-				$(document).layers_intercom_event(
-					'created layers page',
-					{
-						"Template Type": $title,
-						"Page Name": ( 'undefined' == typeof( $( '#preset_page_title' ).val() ) ? $title : $( '#preset_page_title' ).val() )
-					}
-				);
-				$(document).layers_intercom_event( 'completed onboarding' );
-			}
+			/** Log Event on Intercom Removido por Murilo**/
 
 			jQuery.post(
 				ajaxurl,

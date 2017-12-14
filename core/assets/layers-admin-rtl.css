@@ -1915,18 +1915,7 @@ a{
 
 		/*----------------------*/
 		/*- INTERCOM SLIDE -----*/
-		#layers-intercom-data-policy-link {
-			text-decoration: none;
-			font-size: 12px;
-			float: left;
-			color: #B3B3B3;
-			font-style: italic;
-			line-height: 24px;
-		}
-		#layers-intercom-data-policy-link:hover {
-			text-decoration: underline;
-		}
-
+		/* Removido por Murilo */
 
 /*-------------------------------*/
 /*- PRESET / THEME LISTS --------*/

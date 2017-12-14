@@ -169,28 +169,8 @@ jQuery(function($) {
 	});
 
 	/**
-	* 2 - Log "Viewed Dashboard" Event on Intercom
+	* 2 - Log "Viewed Dashboard" Event on Intercom - Removido por Murilo Gama
 	*/
-	if( 'undefined' !== typeof Intercom  ){
-
-		$('#layers-dashboard-page').each( function(){
-
-			Intercom( 'update', { "Viewed Dashboard": true } );
-		})
-
-		$(document).on( 'click', '#layers-dashboard-news-feed a', function(){
-			 $(document).layers_intercom_event( 'clicked news item',
-				{
-					"Link Title": $(this).closest( '.l_admin-column.l_admin-span-3' ).find( 'h4' ).find('a').text(),
-					"Link URL": $(this).attr( 'href' ),
-				});
-		})
-
-		$(document).on( 'submit', '#layers-dashboard-newsletter', function(){
-
-			 $(document).layers_intercom_event( 'submitted newsletter signup' );
-		})
-	}
 
 });
 
