@@ -305,7 +305,6 @@ if( !class_exists( 'Layers_Post_Widget' ) ) {
 						
 						// Get the link array.
 						$link_array       = $this->check_and_return_link( $instance, 'button' );
-						var_dump($link_array);
 						$link_href_attr   = ( $link_array['link'] ) ? 'href="' . esc_url( $link_array['link'] ) . '"' : '';
 						$link_target_attr = ( '_blank' == $link_array['target'] ) ? 'target="_blank"' : '';
 						?>
