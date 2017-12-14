@@ -492,12 +492,12 @@ if( !function_exists( 'layers_body_class' ) ) {
 		$classes[] = 'body-' . $header_menu_layout;
 
 		// Handle sticky / not sticky
-		if( TRUE == $header_sticky_option && 'header-sidebar' != $header_menu_layout ){
+		if( TRUE == $header_sticky_option ){
 			$classes[] = 'layers-header-sticky';
 		}
 
 		// Handle overlay / not overlay
-		if( TRUE == $header_overlay_option && 'header-sidebar' != $header_menu_layout ){
+		if( TRUE == $header_overlay_option ){
 			$classes[] = 'layers-header-overlay';
 		}
 
@@ -772,12 +772,12 @@ if( !function_exists( 'layers_get_header_class' ) ) {
 		$classes[] = 'header-site';
 
 		// Handle sticky / not sticky
-		if( TRUE == $header_sticky_option && 'header-sidebar' != $header_menu_layout ){
+		if( TRUE == $header_sticky_option ){
 			$classes[] = 'header-sticky';
 		}
 
 		// Handle overlay / not overlay
-		if( TRUE == $header_overlay_option && 'header-sidebar' != $header_menu_layout ){
+		if( TRUE == $header_overlay_option ){
 			$classes[] = 'header-overlay';
 		}
 

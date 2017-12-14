@@ -372,7 +372,6 @@ class Layers_Customizer_Config {
 					'header-logo-center-top' => __( 'Logo Center Top' , 'layerswp' ),
 					'header-logo-top' => __( 'Logo Top' , 'layerswp' ),
 					'header-logo-center' => __( 'Logo Center' , 'layerswp' ),
-					'header-sidebar' => __( 'Header Sidebar' , 'layerswp' ),
 				),
 			),
 			'header-width' => array(
@@ -383,41 +382,21 @@ class Layers_Customizer_Config {
 					'layout-boxed' => __( 'Boxed' , 'layerswp' ),
 					'layout-fullwidth' => __( 'Full Width' , 'layerswp' ),
 				),
-				'linked'    => array(
-  					'show-if-selector' => "#customize-control-layers-header-menu-layout",
-  					'show-if-value' => 'header-sidebar',
-  					'show-if-operator' => '!==',
-  				),
 			),
 			'header-position-heading' => array(
 				'type'  => 'layers-heading',
 				'heading_divider' => __( 'Sticky Header' , 'layerswp' ),
-				'linked'    => array(
-  					'show-if-selector' => "#customize-control-layers-header-menu-layout",
-  					'show-if-value' => 'header-sidebar',
-  					'show-if-operator' => '!==',
-  				),
 			),
 			'header-sticky' => array(
 				'type'		=> 'layers-checkbox',
 				'label'		=> __( 'Sticky' , 'layerswp' ),
 				'class'		=> 'layers-pull-top layers-pull-bottom',
 				'default'	=> FALSE,
-				'linked'    => array(
-  					'show-if-selector' => "#customize-control-layers-header-menu-layout",
-  					'show-if-value' => 'header-sidebar',
-  					'show-if-operator' => '!==',
-  				),
 			),
 			'header-overlay' => array(
 				'type'     => 'layers-checkbox',
 				'label'    => __( 'Transparent Overlay' , 'layerswp' ),
 				'default'	=> FALSE,
-				'linked'    => array(
-  					'show-if-selector' => "#customize-control-layers-header-menu-layout",
-  					'show-if-value' => 'header-sidebar',
-  					'show-if-operator' => '!==',
-  				),
 			),
 			'header-upsell-layers-pro' => array(
 				'type'  => 'layers-heading',
