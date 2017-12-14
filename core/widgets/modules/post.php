@@ -121,6 +121,8 @@ if( !class_exists( 'Layers_Post_Widget' ) ) {
 			// Allow anyone to modify the instance.
 			$instance = apply_filters( 'layers_modify_widget_instance', $instance, $this->widget_id, FALSE );
 
+			$instance = $this->convert_legacy_widget_links( $instance, 'button' );
+
 			// Use defaults if $instance is empty.
 			if( empty( $instance ) && ! empty( $this->defaults ) ) {
 				$instance = wp_parse_args( $instance, $this->defaults );
@@ -299,11 +301,24 @@ if( !class_exists( 'Layers_Post_Widget' ) ) {
 						$section_title_class[] = $this->check_and_return( $instance , 'design', 'fonts', 'size' );
 						$section_title_class[] = $this->check_and_return( $instance , 'design', 'fonts', 'align' );
 						$section_title_class[] = ( $this->check_and_return( $instance, 'design', 'background' , 'color' ) && 'dark' == layers_is_light_or_dark( $this->check_and_return( $instance, 'design', 'background' , 'color' ) ) ? 'invert' : '' );
-						$section_title_class = implode( ' ', $section_title_class ); ?>
+						$section_title_class = implode( ' ', $section_title_class );
+						
+						// Get the link array.
+						$link_array       = $this->check_and_return_link( $instance, 'button' );
+						var_dump($link_array);
+						$link_href_attr   = ( $link_array['link'] ) ? 'href="' . esc_url( $link_array['link'] ) . '"' : '';
+						$link_target_attr = ( '_blank' == $link_array['target'] ) ? 'target="_blank"' : '';
+						?>
 						<div class="<?php echo $section_title_class; ?>">
 							<?php if( '' != $this->check_and_return( $instance, 'title' )  ) { ?>
 								<<?php echo $this->check_and_return( $instance, 'design', 'fonts', 'heading-type' ); ?> class="heading">
+									<?php if ( $link_array['link'] ) { ?>
+										<a <?php echo $link_href_attr; ?> <?php echo $link_target_attr; ?>>
+									<?php } ?>
 									<?php echo $instance['title'] ?>
+									<?php if ( $link_array['link'] ) { ?>
+										</a>
+									<?php } ?>
 								</<?php echo $this->check_and_return( $instance, 'design', 'fonts', 'heading-type' ); ?>>
 							<?php } ?>
 							<?php if( '' != $this->check_and_return( $instance, 'excerpt' )  ) { ?>
@@ -421,6 +436,13 @@ if( !class_exists( 'Layers_Post_Widget' ) ) {
 						</div><!-- /row -->
 					</div>
 				<?php }; // if have_posts ?>
+				<?php if ( $link_array['link'] && $link_array['text'] ) { ?>
+					<div class="container text-center">
+						<a <?php echo $link_href_attr; ?> class="button <?php echo $button_size; ?>" <?php echo $link_target_attr; ?>>
+							<?php echo $link_array['text']; ?>
+						</a>
+					</div>
+				<?php } ?>
 				<?php if( isset( $instance['show_pagination'] ) ) { ?>
 					<div class="container">
 						<?php layers_pagination( array( 'query' => $post_query ), 'div', 'pagination clearfix' ); ?>
@@ -767,6 +789,19 @@ if( !class_exists( 'Layers_Post_Widget' ) ) {
 								)
 							); ?>
 						</p>
+
+						<div class="layers-form-item">
+							<label for="<?php echo $this->get_layers_field_id( 'button' ); ?>"><?php echo __( 'Insert Link' , 'layerswp' ); ?></label>
+							<?php echo $this->form_elements()->input(
+								array(
+									'type' => 'link-group',
+									'name' => $this->get_layers_field_name( 'button' ),
+									'id' => $this->get_layers_field_id( 'button' ),
+									'value' => ( isset( $instance['button'] ) ) ? $instance['button'] : NULL,
+								)
+							); ?>
+						</div>
+
 					</div>
 				</section>
 
