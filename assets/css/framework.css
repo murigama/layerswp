@@ -2392,13 +2392,6 @@ object{
 	.thumbnail-media img{
 		display: block;
 		margin: auto;
-		-webkit-transform: scale(1);
-		transform: scale(1);
-		transition: 0.2s all ease-in-out, 4s transform ease-in-out;
-	}
-	.thumbnail-media:hover img{
-		-webkit-transform: scale(1.08);
-		transform: scale(1.08);
 	}
 	.thumbnail-body{
 		padding: 20px;
