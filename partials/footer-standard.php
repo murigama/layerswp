@@ -1,3 +1,5 @@
+<?php dynamic_sidebar( 'obox-layers-builder-all-pages-widget' ); ?>
+
 <?php do_action( 'layers_before_footer' ); ?>
 
 <section id="footer" <?php layers_wrapper_class( 'footer_site', 'footer-site' ); ?>>
