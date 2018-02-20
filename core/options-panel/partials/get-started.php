@@ -289,67 +289,6 @@ $layers_migrator = new Layers_Widget_Migrator(); ?>
 				</div>
 			</div>
 
-			<?php if( ! defined( 'LAYERS_DISABLE_INTERCOM' ) ){ ?>
-				<!-- Enable / Disable Intercom -->
-				<div class="l_admin-onboard-slide l_admin-animate l_admin-onboard-slide-inactive">
-					<div class="l_admin-column l_admin-span-8 postbox">
-						<div class="l_admin-content-large">
-							<!-- Your content goes here -->
-							<div class="l_admin-section-title">
-								<h3 class="l_admin-heading">
-									<?php _e( 'Layers Messenger' , 'layerswp' ); ?>
-								</h3>
-								<p class="l_admin-excerpt">
-									<?php _e( 'Enable Layers Messenger to connect with the Layers team directly from inside Layers. By doing so we can provide you with support for your Layers site directly from your WordPress dashboard.' , 'layerswp' ); ?>
-								</p>
-							</div>
-							<?php echo $form_elements->input( array(
-								'type' => 'hidden',
-								'name' => 'action',
-								'id' => 'action',
-								'value' => 'layers_update_intercom'
-							) ); ?>
-							<div class="l_admin-checkbox-wrapper l_admin-large l_admin-form-item l_admin-push-bottom-medium">
-								<input id="layers-enable-intercom" name="layers_intercom" type="checkbox" <?php if( '0' !== get_option( 'layers_enable_intercom' ) ){ echo 'checked="checked"'; }; ?> />
-								<label for="layers-enable-intercom"><?php _e( 'Enable Layers Messenger', 'layerswp' ); ?></label>
-							</div>
-							<p data-show-if-selector="#layers-enable-intercom" data-show-if-value="true" class="l_admin-form-item">
-								<a href="//www.layerswp.com/privacy-policy/" target="_blank" id="layers-intercom-data-policy-link"><?php _e( 'Your data is safe with us. View our Privacy Policy', 'layerswp' ); ?></a>
-								<label><?php _e( 'Your Name' , 'layerswp' ); ?></label>
-								<?php
-									global $current_user;
-									echo $form_elements->input( array(
-										'type' => 'text',
-										'name' => 'username',
-										'id' => 'username',
-										'placeholder' => $current_user->display_name,
-										'value' =>  $current_user->display_name,
-										'class' => 'layers-text l_admin-large'
-								   ) );
-								?>
-							</p>
-						</div>
-						<div class="l_admin-button-well">
-							<span class="l_admin-save-progress l_admin-hide l_admin-button btn-link" data-busy-message="<?php _e( 'Saving Your Preference' , 'layerswp' ); ?>"></span>
-							<a class="l_admin-button btn-primary l_admin-pull-right onboard-next-step" href=""><?php _e( 'Next Step &rarr;' , 'layerswp' ); ?></a>
-						</div>
-					</div>
-					<div class="l_admin-column l_admin-span-4 no-gutter">
-						<div class="l_admin-content">
-
-							<!-- Your helpful tips go here -->
-							<ul class="l_admin-help-list">
-								<li><?php _e( 'Get advice on the right theme for your site.' , 'layerswp' ); ?></li>
-								<li><?php _e( 'Help choosing extensions.' , 'layerswp' ); ?></li>
-								<li><?php _e( 'Feedback? Let us know as soon as it comes to mind.' , 'layerswp' ); ?></li>
-								<li><?php _e( 'Have a problem? We\'ll send you the best link to solve your issues.' , 'layerswp' ); ?></li>
-								<li><?php _e( 'Allow Layers to collect non-sensitive diagnostic data and usage information to help us improve our theme and best assist you.' , 'layerswp' ); ?></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			<?php } // If !disable intercom ?>
-
 			<!-- Learn the Ropes: Widgets -->
 			<div class="l_admin-onboard-slide l_admin-animate l_admin-onboard-slide-inactive">
 				<div class="l_admin-column l_admin-span-6 postbox">
